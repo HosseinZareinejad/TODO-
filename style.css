@@ -63,3 +63,194 @@ body {
 .app-button:hover {
     background-color: #0056b3;
 }
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f8f9fa;
+}
+
+.header-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+    color: rgba(20, 20, 20, 1);
+}
+
+.header-subtitle {
+    font-size: 28px;
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.header-description {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.header-buttons {
+    margin-top: 20px;
+}
+
+.header-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.header-button.secondary {
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: 2px solid #007bff;
+}
+
+.header-button:hover {
+    background-color: #0056b3;
+}
+
+.header-button.secondary:hover {
+    background-color: #e9ecef;
+}
+
+/* Main Section */
+
+.main {
+    background-color: #ffffff;
+    padding: 50px 20px;
+    margin: 0px 220px;
+}
+.main-image {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.features {
+    text-align: center;
+}
+
+.features-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.features-description {
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+}
+
+.feature-item img {
+    max-width: 50px;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Download Section */
+.download {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    margin: 0px 250px;
+}
+
+.download-content {
+    max-width: 600px;
+    text-align: right;
+}
+
+.download-content h2 {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.download-content h3 {
+    font-size: 28px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.download-content p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
+}
+
+.download-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    align-items: right;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.download-images {
+    position: relative;
+}
+
+.back-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.front-image {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-left: 100px;
+    z-index: 1;
+}
