@@ -1,256 +1,421 @@
+@font-face {
+  font-family: "Yekan";
+  src: url(./Yekan.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: "Yekan";
+}
+
 body {
-    font-family: Yekan;
-    direction: rtl;
-    text-align: right;
-    margin: 0;
-    padding: 0;
+  font-family: "Yekan";
 }
 
+/* Navigation Bar */
 .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-}
-
-.navbar-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1232px;
-    height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 2rem 7.5%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-list {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-item1{
-    margin-left: 40px;
-    text-decoration: none;
-    color: black;
-    font-size: 14px;
-    font-weight: bold;
+.navbar-item1 {
+  margin-left: 40px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
 }
-.navbar-item, navbar-item1 {
-    margin-left: 50px;
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
+
+.navbar-item {
+  margin-left: 50px;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
 }
 
 .navbar-item:hover {
-    color: #007bff;
+  color: #007bff;
+}
+
+.nav-btns {
+  display: flex;
+  gap: 1rem;
 }
 
 .app-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px ;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-right: 840px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.theme-switcher-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .app-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 /* Header Section */
 .header {
-    text-align: center;
-    padding: 100px 20px;
-    background-color: #f8f9fa;
+  text-align: center;
+  padding: 100px 10%;
+  background-color: #f8f9fa;
 }
 
 .header-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0;
-    color: rgba(20, 20, 20, 1);
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  color: rgba(20, 20, 20, 1);
 }
 
 .header-subtitle {
-    font-size: 28px;
-    margin: 10px 0;
-    color: #007bff;
+  font-size: 28px;
+  margin: 10px 0;
+  color: #007bff;
 }
 
 .header-description {
-    font-size: 18px;
-    color: #666;
-    max-width: 600px;
-    margin: 20px auto;
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
 .header-buttons {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .header-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
 }
 
 .header-button.secondary {
-    background-color: #f8f9fa;
-    color: #007bff;
-    border: 2px solid #007bff;
+  background-color: #f8f9fa;
+  color: #007bff;
+  border: 2px solid #007bff;
 }
 
 .header-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .header-button.secondary:hover {
-    background-color: #e9ecef;
+  background-color: #e9ecef;
 }
 
 /* Main Section */
-
 .main {
-    background-color: #ffffff;
-    padding: 50px 20px;
-    margin: 0px 220px;
+  background-color: #ffffff;
+  padding: 50px 10%;
 }
+
 .main-image {
-    text-align: center;
-    margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .main-image img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .features {
-    text-align: center;
+  text-align: center;
 }
 
 .features-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .features-description {
-    font-size: 16px;
-    color: #666;
-    max-width: 600px;
-    margin: 0 auto 40px;
+  font-size: 16px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 40px;
 }
 
 .features-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .feature-item {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: calc(25% - 20px);
-    box-sizing: border-box;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: calc(25% - 20px);
+  box-sizing: border-box;
 }
 
 .feature-item img {
-    max-width: 50px;
-    margin-bottom: 10px;
+  max-width: 50px;
+  margin-bottom: 10px;
 }
 
 .feature-item h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .feature-item p {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
 /* Download Section */
 .download {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 20px;
-    background-color: #f8f9fa;
-    margin: 0px 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10%;
+  background-color: #f8f9fa;
 }
 
 .download-content {
-    max-width: 600px;
-    text-align: right;
+  max-width: 600px;
+  text-align: right;
 }
 
 .download-content h2 {
-    font-size: 24px;
-    color: #007bff;
+  font-size: 24px;
+  color: #007bff;
 }
 
 .download-content h3 {
-    font-size: 28px;
-    color: #333;
-    margin: 10px 0;
+  font-size: 28px;
+  color: #333;
+  margin: 10px 0;
 }
 
 .download-content p {
-    font-size: 16px;
-    color: #666;
-    margin: 10px 0;
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
 }
 
 .download-button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    display: flex;
-    align-items: right;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: flex;
+  align-items: right;
 }
 
 .download-button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .download-images {
-    position: relative;
+  position: relative;
 }
 
 .back-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 500px;
 }
 
 .front-image {
-    position: relative;
-    width: 100%;
-    max-width: 300px;
-    margin-left: 100px;
-    z-index: 1;
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-left: 100px;
+  z-index: 1;
+}
+
+/* Reviews Section */
+.reviews {
+  background-color: #ffffff;
+  padding: 50px 10%;
+  text-align: center;
+}
+
+.reviews-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.reviews-description {
+  font-size: 16px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.reviews-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.review-item {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  width: calc(33% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.review-role {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.reviews-navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.nav-button {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.nav-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px 10%;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.footer-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.footer-form input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.footer-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.footer-form button:hover {
+  background-color: #0056b3;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #666;
 }
