@@ -1,0 +1,179 @@
+/* styles.css */
+
+/* تنظیمات عمومی بدنه صفحه */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* رنگ پس‌زمینه */
+    color: #333; /* رنگ متن */
+    margin: 0; /* حذف حاشیه پیش‌فرض */
+    padding: 0; /* حذف فاصله داخلی پیش‌فرض */
+    direction: rtl; /* جهت نوشتار از راست به چپ */
+}
+
+/* تنظیمات عمومی کانتینر */
+.container {
+    display: flex; /* استفاده از فلکس باکس برای چیدمان */
+    min-height: 100vh; /* حداقل ارتفاع به اندازه تمام صفحه */
+    flex-direction: row-reverse; /* قرار دادن نوار کناری در سمت راست */
+}
+
+/* تنظیمات نوار کناری */
+.sidebar {
+    width: 250px; /* عرض نوار کناری */
+    background-color: #fff; /* رنگ پس‌زمینه سفید */
+    padding: 20px; /* فاصله داخلی */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* سایه در سمت چپ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* تنظیمات پروفایل در نوار کناری */
+.profile {
+    text-align: center; /* ترازبندی متن در مرکز */
+    margin-bottom: 30px; /* فاصله پایین */
+}
+
+.profile img {
+    border-radius: 50%; /* گرد کردن تصویر پروفایل */
+    width: 80px; /* عرض تصویر */
+    height: 80px; /* ارتفاع تصویر */
+}
+
+/* تنظیمات فهرست ناوبری */
+nav ul {
+    list-style: none; /* حذف نقاط فهرست */
+    padding: 0; /* حذف فاصله داخلی */
+}
+
+nav ul li {
+    margin: 10px 0; /* فاصله بالا و پایین هر آیتم */
+}
+
+nav ul li a {
+    text-decoration: none; /* حذف خط زیر متن */
+    color: #333; /* رنگ متن */
+    font-weight: bold; /* ضخامت فونت */
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a i {
+    margin-left: 10px; /* فاصله آیکون از متن */
+}
+
+/* تنظیمات دکمه تغییر تم و دکمه خروج */
+.theme-switcher, #logout {
+    margin-top: 20px; /* فاصله بالا */
+    display: block; /* نمایش به صورت بلوک */
+    width: 100%; /* عرض کامل */
+    text-align: center; /* ترازبندی متن در مرکز */
+    padding: 10px;
+    border: none;
+    background-color: #f4f4f4;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.theme-switcher button i, #logout i {
+    margin-left: 5px; /* فاصله آیکون از متن */
+}
+
+/* تنظیمات محتوای اصلی */
+.main-content {
+    flex: 1; /* گسترش به اندازه باقیمانده فضا */
+    padding: 20px; /* فاصله داخلی */
+    background-color: #ffffff; /* رنگ پس‌زمینه سفید */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* سایه در سمت چپ */
+}
+
+/* تنظیمات بخش تسک‌های امروز و تسک‌های انجام شده */
+.tasks-today, .completed-tasks {
+    margin-bottom: 40px; /* فاصله پایین */
+}
+
+/* تنظیمات فرم تسک جدید */
+#new-task-form {
+    display: flex;
+    flex-direction: column; /* چیدمان عمودی */
+    margin-bottom: 20px; /* فاصله پایین */
+}
+
+/* تنظیمات ورودی‌های فرم تسک جدید */
+#new-task-input, #task-desc, #task-priority {
+    padding: 10px; /* فاصله داخلی */
+    border: 1px solid #ccc; /* حاشیه خاکستری */
+    border-radius: 5px; /* گوشه‌های گرد */
+    margin-bottom: 10px; /* فاصله پایین */
+    font-family: inherit; /* استفاده از فونت عمومی */
+    font-size: 14px; /* اندازه فونت */
+}
+
+/* تنظیمات دکمه فرم تسک جدید */
+#new-task-form button {
+    padding: 10px 20px; /* فاصله داخلی */
+    border: none; /* بدون حاشیه */
+    background-color: #007bff; /* رنگ پس‌زمینه آبی */
+    color: #fff; /* رنگ متن سفید */
+    border-radius: 5px; /* گوشه‌های گرد */
+    cursor: pointer; /* نشانگر موس به صورت دست */
+    font-size: 14px; /* اندازه فونت */
+}
+
+/* تنظیمات فهرست تسک‌ها */
+ul {
+    list-style: none; /* حذف نقاط فهرست */
+    padding: 0; /* حذف فاصله داخلی */
+}
+
+/* تنظیمات آیتم‌های فهرست تسک‌ها */
+ul li {
+    padding: 10px; /* فاصله داخلی */
+    border: 1px solid #ccc; /* حاشیه خاکستری */
+    border-radius: 5px; /* گوشه‌های گرد */
+    margin-bottom: 10px; /* فاصله پایین */
+    display: flex; /* استفاده از فلکس باکس برای چیدمان */
+    justify-content: space-between; /* فاصله‌گذاری بین آیتم‌ها */
+    align-items: center; /* ترازبندی آیتم‌ها در مرکز */
+    background-color: #fff; /* رنگ پس‌زمینه سفید */
+}
+
+/* تنظیمات آیتم‌های فهرست تکمیل شده */
+ul li.completed {
+    text-decoration: line-through; /* خط روی متن */
+    color: #999; /* رنگ متن خاکستری روشن */
+}
+
+/* تنظیمات دکمه‌های آیتم‌های فهرست */
+ul li button {
+    border: none; /* بدون حاشیه */
+    background-color: transparent; /* پس‌زمینه شفاف */
+    cursor: pointer; /* نشانگر موس به صورت دست */
+}
+
+/* تنظیمات اولویت‌ها */
+.priority-low {
+    border-right: 5px solid green; /* حاشیه سبز در سمت راست برای اولویت پایین */
+}
+
+.priority-medium {
+    border-right: 5px solid orange; /* حاشیه نارنجی در سمت راست برای اولویت متوسط */
+}
+
+.priority-high {
+    border-right: 5px solid red; /* حاشیه قرمز در سمت راست برای اولویت بالا */
+}
+
+/* تنظیمات دکمه‌های ویرایش، حذف و تکمیل */
+button.edit, button.delete, button.complete {
+    margin-left: 10px; /* فاصله چپ */
+}
+
+/* تنظیمات عنوان‌ها */
+h2 {
+    margin-top: 0; /* حذف فاصله بالا */
+    font-size: 20px; /* اندازه فونت */
+    font-weight: bold; /* ضخامت فونت */
+}

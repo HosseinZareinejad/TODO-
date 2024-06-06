@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <main class="main-content">
+        <section class="tasks-today">
+          <h2>تسک‌های امروز</h2>
+          <form id="new-task-form">
+            <input type="text" id="new-task-input" placeholder="نام تسک" />
+            <textarea id="task-desc" placeholder="توضیحات"></textarea>
+            <select id="task-priority">
+              <option value="low">پایین</option>
+              <option value="medium">متوسط</option>
+              <option value="high">بالا</option>
+            </select>
+            <button type="submit">اضافه کردن</button>
+          </form>
+          <ul id="tasks-list"></ul>
+        </section>
+        <section class="completed-tasks">
+          <h2>تسک‌های انجام شده:</h2>
+          <ul id="completed-tasks-list"></ul>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <div class="profile">
+          <img
+            src="E:\Quera\project\Main_app\photo_2024-03-21_13-40-38.jpg"
+            alt="Profile Picture"
+          />
+          <h2>سلام حسین</h2>
+          <p>پنج شنبه, ۱۷ خرداد ۱۴۰۳</p>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-home"></i>خانه</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-tasks"></i>تسک‌ها</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-calendar-alt"></i>تقویم</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-chart-line"></i>گزارشات</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-cog"></i>تنظیمات</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-headset"></i>پشتیبانی</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-user"></i>پروفایل</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="theme-switcher">
+          <button id="theme-toggle">
+            روشن <i class="fas fa-sun"></i> / تاریک <i class="fas fa-moon"></i>
+          </button>
+        </div>
+        <button id="logout"><i class="fas fa-sign-out-alt"></i> خروج</button>
+      </aside>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
