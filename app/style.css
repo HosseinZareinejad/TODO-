@@ -1,73 +1,74 @@
-/* styles.css */
 
-/* تنظیمات عمومی بدنه صفحه */
+
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* رنگ پس‌زمینه */
-    color: #333; /* رنگ متن */
-    margin: 0; /* حذف حاشیه پیش‌فرض */
-    padding: 0; /* حذف فاصله داخلی پیش‌فرض */
-    direction: rtl; /* جهت نوشتار از راست به چپ */
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
 }
 
-/* تنظیمات عمومی کانتینر */
+
 .container {
-    display: flex; /* استفاده از فلکس باکس برای چیدمان */
-    min-height: 100vh; /* حداقل ارتفاع به اندازه تمام صفحه */
-    flex-direction: row-reverse; /* قرار دادن نوار کناری در سمت راست */
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row-reverse;
 }
 
-/* تنظیمات نوار کناری */
+
 .sidebar {
-    width: 250px; /* عرض نوار کناری */
-    background-color: #fff; /* رنگ پس‌زمینه سفید */
-    padding: 20px; /* فاصله داخلی */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* سایه در سمت چپ */
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* تنظیمات پروفایل در نوار کناری */
+
 .profile {
-    text-align: center; /* ترازبندی متن در مرکز */
-    margin-bottom: 30px; /* فاصله پایین */
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .profile img {
-    border-radius: 50%; /* گرد کردن تصویر پروفایل */
-    width: 80px; /* عرض تصویر */
-    height: 80px; /* ارتفاع تصویر */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
 }
 
-/* تنظیمات فهرست ناوبری */
+
 nav ul {
-    list-style: none; /* حذف نقاط فهرست */
-    padding: 0; /* حذف فاصله داخلی */
+    list-style: none;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 10px 0; /* فاصله بالا و پایین هر آیتم */
+    margin: 10px 0;
 }
 
 nav ul li a {
-    text-decoration: none; /* حذف خط زیر متن */
-    color: #333; /* رنگ متن */
-    font-weight: bold; /* ضخامت فونت */
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
     display: flex;
     align-items: center;
 }
 
-nav ul li a i {
-    margin-left: 10px; /* فاصله آیکون از متن */
+nav ul li a svg, nav ul li a i {
+    margin-left: 10px;
 }
 
-/* تنظیمات دکمه تغییر تم و دکمه خروج */
+
 .theme-switcher, #logout {
-    margin-top: 20px; /* فاصله بالا */
-    display: block; /* نمایش به صورت بلوک */
-    width: 100%; /* عرض کامل */
-    text-align: center; /* ترازبندی متن در مرکز */
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
     padding: 10px;
     border: none;
     background-color: #f4f4f4;
@@ -78,102 +79,165 @@ nav ul li a i {
 }
 
 .theme-switcher button i, #logout i {
-    margin-left: 5px; /* فاصله آیکون از متن */
+    margin-left: 5px;
 }
 
-/* تنظیمات محتوای اصلی */
+
 .main-content {
-    flex: 1; /* گسترش به اندازه باقیمانده فضا */
-    padding: 20px; /* فاصله داخلی */
-    background-color: #ffffff; /* رنگ پس‌زمینه سفید */
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* سایه در سمت چپ */
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
 }
 
-/* تنظیمات بخش تسک‌های امروز و تسک‌های انجام شده */
+
 .tasks-today, .completed-tasks {
-    margin-bottom: 40px; /* فاصله پایین */
+    margin-bottom: 40px;
 }
 
-/* تنظیمات فرم تسک جدید */
+
+#show-task-form {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+#new-task-form.hidden {
+    display: none;
+}
+
 #new-task-form {
     display: flex;
-    flex-direction: column; /* چیدمان عمودی */
-    margin-bottom: 20px; /* فاصله پایین */
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
-/* تنظیمات ورودی‌های فرم تسک جدید */
-#new-task-input, #task-desc, #task-priority {
-    padding: 10px; /* فاصله داخلی */
-    border: 1px solid #ccc; /* حاشیه خاکستری */
-    border-radius: 5px; /* گوشه‌های گرد */
-    margin-bottom: 10px; /* فاصله پایین */
-    font-family: inherit; /* استفاده از فونت عمومی */
-    font-size: 14px; /* اندازه فونت */
+
+#new-task-input, #task-desc {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-size: 14px;
 }
 
-/* تنظیمات دکمه فرم تسک جدید */
-#new-task-form button {
-    padding: 10px 20px; /* فاصله داخلی */
-    border: none; /* بدون حاشیه */
-    background-color: #007bff; /* رنگ پس‌زمینه آبی */
-    color: #fff; /* رنگ متن سفید */
-    border-radius: 5px; /* گوشه‌های گرد */
-    cursor: pointer; /* نشانگر موس به صورت دست */
-    font-size: 14px; /* اندازه فونت */
+.priority-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 5px;
 }
 
-/* تنظیمات فهرست تسک‌ها */
+.priority-button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+}
+
+.priority-button[data-priority="low"] {
+    background-color: #d4edda;
+}
+
+.priority-button[data-priority="medium"] {
+    background-color: #fff3cd;
+}
+
+.priority-button[data-priority="high"] {
+    background-color: #f8d7da;
+}
+
+
+.priority-buttons.hidden {
+    display: none;
+}
+
+.selected-priority {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.selected-priority button {
+    margin-right: 10px;
+}
+
+
+#new-task-form button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
 ul {
-    list-style: none; /* حذف نقاط فهرست */
-    padding: 0; /* حذف فاصله داخلی */
+    list-style: none;
+    padding: 0;
 }
 
-/* تنظیمات آیتم‌های فهرست تسک‌ها */
+
 ul li {
-    padding: 10px; /* فاصله داخلی */
-    border: 1px solid #ccc; /* حاشیه خاکستری */
-    border-radius: 5px; /* گوشه‌های گرد */
-    margin-bottom: 10px; /* فاصله پایین */
-    display: flex; /* استفاده از فلکس باکس برای چیدمان */
-    justify-content: space-between; /* فاصله‌گذاری بین آیتم‌ها */
-    align-items: center; /* ترازبندی آیتم‌ها در مرکز */
-    background-color: #fff; /* رنگ پس‌زمینه سفید */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
 }
 
-/* تنظیمات آیتم‌های فهرست تکمیل شده */
+ul li .task-priority {
+    margin-left: 10px;
+}
+
+
 ul li.completed {
-    text-decoration: line-through; /* خط روی متن */
-    color: #999; /* رنگ متن خاکستری روشن */
+    text-decoration: line-through;
+    color: #999;
 }
 
-/* تنظیمات دکمه‌های آیتم‌های فهرست */
+
 ul li button {
-    border: none; /* بدون حاشیه */
-    background-color: transparent; /* پس‌زمینه شفاف */
-    cursor: pointer; /* نشانگر موس به صورت دست */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-/* تنظیمات اولویت‌ها */
+
 .priority-low {
-    border-right: 5px solid green; /* حاشیه سبز در سمت راست برای اولویت پایین */
+    border-right: 5px solid green;
 }
 
 .priority-medium {
-    border-right: 5px solid orange; /* حاشیه نارنجی در سمت راست برای اولویت متوسط */
+    border-right: 5px solid orange;
 }
 
 .priority-high {
-    border-right: 5px solid red; /* حاشیه قرمز در سمت راست برای اولویت بالا */
+    border-right: 5px solid red;
 }
 
-/* تنظیمات دکمه‌های ویرایش، حذف و تکمیل */
+
 button.edit, button.delete, button.complete {
-    margin-left: 10px; /* فاصله چپ */
+    margin-left: 10px;
 }
 
-/* تنظیمات عنوان‌ها */
+
 h2 {
-    margin-top: 0; /* حذف فاصله بالا */
-    font-size: 20px; /* اندازه فونت */
-    font-weight: bold; /* ضخامت فونت */
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: bold;
 }
