@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About</title>
-    <link rel="stylesheet" href="aboutstyle.css" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contactusstyle.css" />
   </head>
   <body>
     <!--nav section-->
@@ -13,7 +13,7 @@
         <li><a href="#" class="navbar-item1">کوئرا لیست</a></li>
         <li><a href="index.html" class="navbar-item">صفحه اصلی</a></li>
         <li><a href="about.html" class="navbar-item">درباره ما</a></li>
-        <li><a href="contactUs.html" class="navbar-item">ارتباط با ما</a></li>
+        <li><a href="#" class="navbar-item">ارتباط با ما</a></li>
       </ul>
       <div class="nav-btns">
         <button
@@ -75,61 +75,47 @@
       </div>
     </nav>
 
-    <!-- About Us Section -->
-    <main class="about-main">
-      <div class="about-container">
-        <div class="about-right">
-          <h2>درباره من</h2>
-          <h3>محمد محمدی</h3>
-          <p>
-            کاربران اندروید می‌توانند اپلیکیشن کوئرا لیست را از استورهای معتبر
-            اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر دانلود
-            نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده
-            نمایند.
-          </p>
-          <p>
-            کاربران اندروید می‌توانند اپلیکیشن کوئرا لیست را از استورهای معتبر
-            اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر دانلود
-            نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده
-            نمایند.
-          </p>
-          <p>
-            کاربران اندروید می‌توانند اپلیکیشن کوئرا لیست را از استورهای معتبر
-            اندروید دانلود نمایند. همچنین کاربران سیستم عامل اپل علاوه بر دانلود
-            نرم‌افزار از اپل‌استور می‌توانند از نسخه مبتنی بر وب آن استفاده
-            نمایند.
-          </p>
+    <!-- Contact Us Section -->
+    <main class="contact-main">
+      <div class="contact-container">
+        <div class="contact-form">
+          <form>
+            <div>
+              <label for="name">نام:</label>
+              <input type="text" id="name" name="name" />
+            </div>
+            <div>
+              <label for="lastname">نام خانوادگی:</label>
+              <input type="text" id="lastname" name="lastname" />
+            </div>
+            <div>
+              <label for="email">ایمیل:</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div>
+              <label for="phone">شماره تماس:</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+            <div>
+              <label for="message">متن:</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <button type="submit" class="send-button">ارسال پیام</button>
+          </form>
         </div>
-        <div class="about-left">
-          <div class="about-image">
-            <img
-              src="./assets/Frame 427321285.png"
-              alt="Profile Image"
-              class="profile-picture"
-            />
-          </div>
-          <div class="about-details">
-            <div class="stat-item">
-              <h4>تهران</h4>
-              <p>محل زندگی</p>
-            </div>
-            <div class="stat-item">
-              <h4>1379</h4>
-              <p>سال تولد</p>
-            </div>
-            <div class="stat-item">
-              <h4>+10</h4>
-              <p>مشارکت در پروژه</p>
-            </div>
-            <div class="stat-item">
-              <h4>3.5</h4>
-              <p>سال تجربه کار</p>
-            </div>
+        <div class="contact-info">
+          <h2>تماس با من</h2>
+          <p>چیزی هست که بخوای ازم بپرسی؟ خوشحال میشم بتونم بهت کمک کنم.</p>
+          <p><a href="tel:+989121234567">0912 1234567</a></p>
+          <p><a href="mailto:QueraList@gmail.com">QueraList@gmail.com</a></p>
+          <div class="contact-icons">
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
           </div>
         </div>
       </div>
     </main>
-
     <!-- Footer Section -->
     <footer class="footer">
       <div class="footer-content">
