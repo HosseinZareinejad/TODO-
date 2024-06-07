@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const completedTasksList = document.getElementById('completed-tasks-list');
     let selectedPriority = 'low';
 
+    // بارگذاری تسک‌ها از Local Storage
+    loadTasksFromLocalStorage();
+
     // نمایش فرم تسک جدید
     showTaskFormButton.addEventListener('click', () => {
         newTaskForm.classList.toggle('hidden');
@@ -51,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const taskDesc = taskDescInput.value.trim();
         if (taskText !== '') {
             addTask(taskText, taskDesc, selectedPriority); // افزودن تسک جدید
+            saveTaskToLocalStorage(taskText, taskDesc, selectedPriority); // ذخیره تسک در Local Storage
             newTaskInput.value = ''; // پاک کردن ورودی نام تسک
             taskDescInput.value = ''; // پاک کردن توضیحات تسک
             selectedPriorityContainer.innerHTML = ''; // پاک کردن اولویت انتخاب شده
@@ -72,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const completeButton = document.createElement('button');
         completeButton.innerHTML = '✔️';
-        completeButton.addEventListener('click', () => completeTask(taskItem));
+        completeButton.addEventListener('click', () => completeTask(taskItem, taskText, taskDesc, taskPriority));
 
         const editButton = document.createElement('button');
         editButton.innerHTML = '✏️';
@@ -80,7 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const deleteButton = document.createElement('button');
         deleteButton.innerHTML = '🗑️';
-        deleteButton.addEventListener('click', () => taskItem.remove());
+        deleteButton.addEventListener('click', () => {
+            deleteTaskFromLocalStorage(taskText);
+            taskItem.remove();
+        });
 
         const buttons = document.createElement('div');
         buttons.appendChild(priorityLabel);
@@ -94,10 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // تابع تکمیل تسک
-    function completeTask(taskItem) {
+    function completeTask(taskItem, taskText, taskDesc, taskPriority) {
         taskItem.classList.add('completed');
         completedTasksList.appendChild(taskItem);
         taskItem.querySelectorAll('button').forEach(button => button.remove());
+        markTaskAsCompletedInLocalStorage(taskText);
     }
 
     // تابع ویرایش تسک
@@ -112,5 +120,60 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedPriority = 'low';
         });
         taskItem.remove();
+        deleteTaskFromLocalStorage(taskText);
+    }
+
+    // ذخیره تسک در Local Storage
+    function saveTaskToLocalStorage(taskText, taskDesc, taskPriority) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.push({ text: taskText, desc: taskDesc, priority: taskPriority, completed: false });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // بارگذاری تسک‌ها از Local Storage
+    function loadTasksFromLocalStorage() {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach(task => {
+            if (task.completed) {
+                addTaskToCompletedList(task.text, task.desc, task.priority);
+            } else {
+                addTask(task.text, task.desc, task.priority);
+            }
+        });
+    }
+
+    // حذف تسک از Local Storage
+    function deleteTaskFromLocalStorage(taskText) {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks = tasks.filter(task => task.text !== taskText);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // علامت‌گذاری تسک به عنوان تکمیل شده در Local Storage
+    function markTaskAsCompletedInLocalStorage(taskText) {
+        const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach(task => {
+            if (task.text === taskText) {
+                task.completed = true;
+            }
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    // افزودن تسک تکمیل شده به لیست تکمیل شده‌ها
+    function addTaskToCompletedList(taskText, taskDesc, taskPriority) {
+        const taskItem = document.createElement('li');
+        taskItem.classList.add(`priority-${taskPriority}`, 'completed'); // افزودن کلاس اولویت و تکمیل شده
+        
+        const taskContent = document.createElement('div');
+        taskContent.innerHTML = `<strong>${taskText}</strong><p>${taskDesc}</p>`;
+
+        const priorityLabel = document.createElement('div');
+        priorityLabel.classList.add('task-priority');
+        priorityLabel.innerText = `اولویت: ${taskPriority === 'low' ? 'پایین' : taskPriority === 'medium' ? 'متوسط' : 'بالا'}`;
+
+        taskItem.appendChild(taskContent);
+        taskItem.appendChild(priorityLabel);
+        completedTasksList.appendChild(taskItem);
     }
 });
