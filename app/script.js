@@ -1,5 +1,3 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
     // انتخاب عناصر فرم و فهرست‌ها
     const showTaskFormButton = document.getElementById('show-task-form');
@@ -70,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const priorityLabel = document.createElement('div');
         priorityLabel.classList.add('task-priority');
-        priorityLabel.innerText = taskPriority === 'low' ? 'پایین' : taskPriority === 'medium' ? 'متوسط' : 'بالا';
+        priorityLabel.innerText = `اولویت: ${taskPriority === 'low' ? 'پایین' : taskPriority === 'medium' ? 'متوسط' : 'بالا'}`;
 
         const completeButton = document.createElement('button');
         completeButton.innerHTML = '✔️';

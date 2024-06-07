@@ -1,9 +1,7 @@
 @font-face {
     font-family: "Yekan";
     src: url(./assets/font/Yekan.ttf);
-  }
-  
-
+}
 
 body {
     background-color: #f4f4f4;
@@ -13,13 +11,11 @@ body {
     direction: rtl;
 }
 
-
 .container {
     display: flex;
     min-height: 100vh;
     flex-direction: row-reverse;
 }
-
 
 .sidebar {
     width: 250px;
@@ -30,7 +26,6 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
-
 
 .profile {
     text-align: center;
@@ -44,13 +39,13 @@ body {
     margin-bottom: 10px;
 }
 
-
 nav ul {
     list-style: none;
     padding: 0;
 }
 
 nav ul li {
+    border: none;
     margin: 10px 0;
 }
 
@@ -66,7 +61,6 @@ nav ul li a svg, nav ul li a i {
     margin-left: 10px;
 }
 
-
 .theme-switcher, #logout {
     margin-top: 20px;
     display: block;
@@ -74,7 +68,7 @@ nav ul li a svg, nav ul li a i {
     text-align: center;
     padding: 10px;
     border: none;
-    background-color: #f4f4f4;
+    background-color: transparent;
     color: #333;
     cursor: pointer;
     font-size: 14px;
@@ -85,19 +79,16 @@ nav ul li a svg, nav ul li a i {
     margin-left: 5px;
 }
 
-
 .main-content {
     flex: 1;
-    padding: 20px;
+    padding: 70px 180px;
     background-color: #ffffff;
     box-shadow: -2px 0 5px rgba(0,0,0,0.1);
 }
 
-
 .tasks-today, .completed-tasks {
     margin-bottom: 40px;
 }
-
 
 #show-task-form {
     padding: 10px 20px;
@@ -110,7 +101,6 @@ nav ul li a svg, nav ul li a i {
     margin-bottom: 20px;
 }
 
-
 #new-task-form.hidden {
     display: none;
 }
@@ -120,7 +110,6 @@ nav ul li a svg, nav ul li a i {
     flex-direction: column;
     margin-bottom: 20px;
 }
-
 
 #new-task-input, #task-desc {
     padding: 10px;
@@ -134,7 +123,7 @@ nav ul li a svg, nav ul li a i {
 
 .priority-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin-bottom: 10px;
     gap: 5px;
 }
@@ -159,7 +148,6 @@ nav ul li a svg, nav ul li a i {
     background-color: #f8d7da;
 }
 
-
 .priority-buttons.hidden {
     display: none;
 }
@@ -174,7 +162,6 @@ nav ul li a svg, nav ul li a i {
     margin-right: 10px;
 }
 
-
 #new-task-form button[type="submit"] {
     padding: 10px 20px;
     border: none;
@@ -185,12 +172,10 @@ nav ul li a svg, nav ul li a i {
     font-size: 14px;
 }
 
-
 ul {
     list-style: none;
     padding: 0;
 }
-
 
 ul li {
     padding: 10px;
@@ -207,19 +192,16 @@ ul li .task-priority {
     margin-left: 10px;
 }
 
-
 ul li.completed {
     text-decoration: line-through;
     color: #999;
 }
-
 
 ul li button {
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
-
 
 .priority-low {
     border-right: 5px solid green;
@@ -233,11 +215,9 @@ ul li button {
     border-right: 5px solid red;
 }
 
-
 button.edit, button.delete, button.complete {
     margin-left: 10px;
 }
-
 
 h2 {
     margin-top: 0;
